@@ -1,0 +1,66 @@
+<div class="title-container">
+  <h1>Login</h1>
+</div>
+
+<div class="login-container">
+  <form class="form-login" [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+    <!-- IDENTIFICAÇÃO -->
+    <div class="field-separator">Acesso</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Digite seu e-mail"
+          autocomplete="username"
+          aria-required="true"
+        />
+        <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          E-mail inválido
+        </small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="password">Senha</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+          aria-required="true"
+        />
+        <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          A senha é obrigatória
+        </small>
+      </div>
+    </div>
+
+    <!-- OPÇÕES -->
+    <div class="form-row">
+      <div class="field checkbox-field">
+        <label>
+          <input type="checkbox" formControlName="rememberMe" />
+          Lembrar-me
+        </label>
+      </div>
+    </div>
+
+    <!-- AÇÕES -->
+    <div class="container-btn">
+      <button type="submit" [disabled]="loginForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Entrando...' : 'Entrar' }}
+      </button>
+    </div>
+
+    <!-- LINKS AUXILIARES -->
+    <div class="form-links">
+      <a href="#">Esqueci minha senha</a>
+    </div>
+  </form>
+</div>
