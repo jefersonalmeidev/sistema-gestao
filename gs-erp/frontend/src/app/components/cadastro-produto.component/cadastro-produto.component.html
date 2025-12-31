@@ -1,0 +1,226 @@
+<div class="title-container">
+  <h1>Cadastro de Produto</h1>
+</div>
+
+<div class="cad-produto-container">
+  <form class="form-cad-produto" [formGroup]="formProduto" (ngSubmit)="onSubmit()" novalidate>
+    <!-- IDENTIFICAÇÃO -->
+    <div class="field-separator">Identificação</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="codigo">Código</label>
+        <input
+          id="codigo"
+          type="text"
+          formControlName="codigo"
+          placeholder="Código"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input
+          id="nome"
+          type="text"
+          formControlName="nome"
+          placeholder="Nome"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="descricao">Descrição</label>
+        <input id="descricao" type="text" formControlName="descricao" placeholder="Descrição" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="imagem">Imagem</label>
+        <input id="imagem" type="text" formControlName="imagem" placeholder="URL da imagem" />
+      </div>
+    </div>
+
+    <!-- CLASSIFICAÇÃO -->
+    <div class="field-separator">Classificação</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="categoria">Categoria</label>
+        <input id="categoria" type="text" formControlName="categoria" placeholder="Categoria" />
+      </div>
+      <div class="field">
+        <label for="subcategoria">Subcategoria</label>
+        <input
+          id="subcategoria"
+          type="text"
+          formControlName="subcategoria"
+          placeholder="Subcategoria"
+        />
+      </div>
+      <div class="field">
+        <label for="marca">Marca</label>
+        <input id="marca" type="text" formControlName="marca" placeholder="Marca" />
+      </div>
+      <div class="field">
+        <label for="modelo">Modelo</label>
+        <input id="modelo" type="text" formControlName="modelo" placeholder="Modelo" />
+      </div>
+    </div>
+
+    <!-- ESTOQUE -->
+    <div class="field-separator">Estoque</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="quantidade">Quantidade</label>
+        <input
+          id="quantidade"
+          type="number"
+          formControlName="quantidade"
+          placeholder="Quantidade"
+        />
+      </div>
+      <div class="field">
+        <label for="unidadeMedida">Unidade de Medida</label>
+        <input
+          id="unidadeMedida"
+          type="text"
+          formControlName="unidadeMedida"
+          placeholder="Ex: unidade, kg, litro"
+        />
+      </div>
+      <div class="field">
+        <label for="estoqueMinimo">Estoque Mínimo</label>
+        <input
+          id="estoqueMinimo"
+          type="number"
+          formControlName="estoqueMinimo"
+          placeholder="Estoque mínimo"
+        />
+      </div>
+      <div class="field">
+        <label for="localizacao">Localização</label>
+        <input
+          id="localizacao"
+          type="text"
+          formControlName="localizacao"
+          placeholder="Localização"
+        />
+      </div>
+    </div>
+
+    <!-- PREÇO -->
+    <div class="field-separator">Preço</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="custo">Preço de Custo</label>
+        <input id="custo" type="number" formControlName="custo" placeholder="Custo" />
+      </div>
+      <div class="field">
+        <label for="venda">Preço de Venda</label>
+        <input id="venda" type="number" formControlName="venda" placeholder="Venda" />
+      </div>
+      <div class="field">
+        <label for="margemLucro">Margem de Lucro (%)</label>
+        <input
+          id="margemLucro"
+          type="number"
+          formControlName="margemLucro"
+          placeholder="Margem de lucro"
+        />
+      </div>
+      <div class="field">
+        <label for="promocao">Em Promoção</label>
+        <select id="promocao" formControlName="promocao">
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- INFORMAÇÕES TÉCNICAS -->
+    <div class="field-separator">Informações Técnicas</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="peso">Peso (kg)</label>
+        <input id="peso" type="number" formControlName="peso" placeholder="Peso" />
+      </div>
+      <div class="field">
+        <label for="dimensoes">Dimensões</label>
+        <input id="dimensoes" type="text" formControlName="dimensoes" placeholder="Dimensões" />
+      </div>
+      <div class="field">
+        <label for="cor">Cor</label>
+        <input id="cor" type="text" formControlName="cor" placeholder="Cor" />
+      </div>
+      <div class="field">
+        <label for="tamanho">Tamanho</label>
+        <input id="tamanho" type="text" formControlName="tamanho" placeholder="Tamanho" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="material">Material</label>
+        <input id="material" type="text" formControlName="material" placeholder="Material" />
+      </div>
+      <div class="field">
+        <label for="validade">Validade</label>
+        <input id="validade" type="date" formControlName="validade" />
+      </div>
+      <div class="field">
+        <label for="codigoBarras">Código de Barras</label>
+        <input
+          id="codigoBarras"
+          type="text"
+          formControlName="codigoBarras"
+          placeholder="Código de barras"
+        />
+      </div>
+    </div>
+
+    <!-- FORNECEDOR -->
+    <div class="field-separator">Fornecedor</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="nomeFornecedor">Nome do Fornecedor</label>
+        <input
+          id="nomeFornecedor"
+          type="text"
+          formControlName="nomeFornecedor"
+          placeholder="Fornecedor"
+        />
+      </div>
+      <div class="field">
+        <label for="codigoFornecedor">Código do Fornecedor</label>
+        <input
+          id="codigoFornecedor"
+          type="text"
+          formControlName="codigoFornecedor"
+          placeholder="Código do fornecedor"
+        />
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="field-separator">Status</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="ativo">Ativo</label>
+        <select id="ativo" formControlName="ativo">
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="condicao">Condição</label>
+        <select id="condicao" formControlName="condicao">
+          <option value="Novo">Novo</option>
+          <option value="Usado">Usado</option>
+          <option value="Recondicionado">Recondicionado</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- BOTÃO -->
+    <div class="container-btn">
+      <button type="submit" [disabled]="formProduto.invalid">Salvar</button>
+    </div>
+  </form>
+</div>

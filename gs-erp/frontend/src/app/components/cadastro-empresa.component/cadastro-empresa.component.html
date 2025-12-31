@@ -1,0 +1,346 @@
+<div class="title-container">
+  <h1>Cadastro de Empresa</h1>
+</div>
+
+<div class="cad-emp-container">
+  <form class="form-cad-emp" [formGroup]="formEmpresa" (ngSubmit)="onSubmit()" novalidate>
+    <!-- IDENTIFICAÇÃO -->
+    <div class="field-separator">Identificação</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="codigo">Codigo Empresa</label>
+        <input
+          id="codigo"
+          type="text"
+          formControlName="codigo"
+          placeholder="Codigo"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="razaoSocial">Razão Social</label>
+        <input
+          id="razaoSocial"
+          type="text"
+          formControlName="razaoSocial"
+          placeholder="Razão Social"
+          aria-required="true"
+        />
+      </div>
+
+      <div class="field">
+        <label for="cnpj">CNPJ</label>
+        <input
+          id="cnpj"
+          type="text"
+          formControlName="cnpj"
+          placeholder="CNPJ"
+          aria-required="true"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="emailPrincipal">Email Principal</label>
+        <input
+          id="emailPrincipal"
+          type="email"
+          formControlName="emailPrincipal"
+          placeholder="E-mail Principal"
+        />
+      </div>
+
+      <div class="field">
+        <label for="inscricaoEstadual">Inscrição Estadual</label>
+        <input
+          id="inscricaoEstadual"
+          type="text"
+          formControlName="inscricaoEstadual"
+          placeholder="Inscrição Estadual"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="inscricaoMunicipal">Inscrição Municipal</label>
+        <input
+          id="inscricaoMunicipal"
+          type="text"
+          formControlName="inscricaoMunicipal"
+          placeholder="Inscrição Municipal"
+        />
+      </div>
+
+      <div class="field">
+        <label for="tipoEmpresa">Tipo de Empresa</label>
+        <select id="tipoEmpresa" formControlName="tipoEmpresa">
+          <option value="" disabled selected>Selecione</option>
+          <option value="MEI">MEI</option>
+          <option value="ME">ME</option>
+          <option value="EPP">EPP</option>
+          <option value="LTDA">LTDA</option>
+          <option value="SA">SA</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="dataAbertura">Data de Abertura</label>
+        <input id="dataAbertura" type="date" formControlName="dataAbertura" />
+      </div>
+
+      <div class="field">
+        <label for="situacaoCadastral">Situação Cadastral</label>
+        <select id="situacaoCadastral" formControlName="situacaoCadastral">
+          <option value="" disabled selected>Selecione</option>
+          <option value="Ativa">Ativa</option>
+          <option value="Inativa">Inativa</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- CONTATOS -->
+    <div class="field-separator">Contatos</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" type="tel" formControlName="telefone" placeholder="Telefone" />
+      </div>
+
+      <div class="field">
+        <label for="celular">Celular</label>
+        <input id="celular" type="tel" formControlName="celular" placeholder="Celular" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="emailContato">Email de Contato</label>
+        <input
+          id="emailContato"
+          type="email"
+          formControlName="emailContato"
+          placeholder="Email de Contato"
+        />
+      </div>
+
+      <div class="field">
+        <label for="emailFinanceiro">Email Financeiro</label>
+        <input
+          id="emailFinanceiro"
+          type="email"
+          formControlName="emailFinanceiro"
+          placeholder="Email Financeiro"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="site">Website</label>
+        <input id="site" type="url" formControlName="site" placeholder="https://www.exemplo.com" />
+      </div>
+
+      <div class="field">
+        <label for="responsavel">Responsável</label>
+        <input
+          id="responsavel"
+          type="text"
+          formControlName="responsavel"
+          placeholder="Responsável"
+        />
+      </div>
+    </div>
+
+    <!-- FISCAL -->
+    <div class="field-separator">Fiscal</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="regimeTributario">Regime Tributário</label>
+        <select id="regimeTributario" formControlName="regimeTributario">
+          <option value="" disabled selected>Selecione</option>
+          <option value="Simples Nacional">Simples Nacional</option>
+          <option value="Lucro Presumido">Lucro Presumido</option>
+          <option value="Lucro Real">Lucro Real</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="optanteSimplesNacional">Optante Simples Nacional</label>
+        <select id="optanteSimplesNacional" formControlName="optanteSimplesNacional">
+          <option value="n">Não</option>
+          <option value="s">Sim</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="cnaePrincipal">CNAE Principal</label>
+        <input
+          id="cnaePrincipal"
+          type="text"
+          formControlName="cnaePrincipal"
+          placeholder="CNAE Principal"
+        />
+      </div>
+
+      <div class="field">
+        <label for="cnaesSecundarios">CNAEs Secundários</label>
+        <input
+          id="cnaesSecundarios"
+          type="text"
+          formControlName="cnaesSecundarios"
+          placeholder="CNAEs Secundários"
+        />
+      </div>
+
+      <div class="field">
+        <label for="codigoRegimeTributario">Código Regime Tributário</label>
+        <input
+          id="codigoRegimeTributario"
+          type="text"
+          formControlName="codigoRegimeTributario"
+          placeholder="Código Regime Tributário"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="contribuinteICMS">Contribuinte ICMS</label>
+        <select id="contribuinteICMS" formControlName="contribuinteICMS">
+          <option value="n">Não</option>
+          <option value="s">Sim</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="aliquotas">Alíquotas</label>
+        <select id="aliquotas" formControlName="aliquotas">
+          <option value="icms">ICMS</option>
+          <option value="iss">ISS</option>
+          <option value="pis">PIS</option>
+          <option value="cofins">COFINS</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="municipioIncidenciaISS">Município Incidência ISS</label>
+        <input
+          id="municipioIncidenciaISS"
+          type="text"
+          formControlName="municipioIncidenciaISS"
+          placeholder="Município Incidência ISS"
+        />
+      </div>
+    </div>
+
+    <!-- FINANCEIRO -->
+    <div class="field-separator">Financeiro</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="banco">Banco</label>
+        <input id="banco" type="text" formControlName="banco" placeholder="Banco" />
+      </div>
+      <div class="field">
+        <label for="agencia">Agencia</label>
+        <input id="agencia" type="text" formControlName="agencia" placeholder="Agencia" />
+      </div>
+      <div class="field">
+        <label for="conta">Conta</label>
+        <input id="conta" type="text" formControlName="conta" placeholder="Conta" />
+      </div>
+
+      <div class="field">
+        <label for="tipoConta">Tipo Conta</label>
+        <select id="titipoContapo" formControlName="tipoConta">
+          <option value="corrente">Corrente</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="chavePix">Chave Pix</label>
+        <input id="chavePix" type="text" formControlName="chavePix" placeholder="Chave Pix" />
+      </div>
+      <div class="field">
+        <label for="titular">Titular</label>
+        <input id="titular" type="text" formControlName="titular" placeholder="Titular" />
+      </div>
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="field-separator">Endereço</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="cep">CEP</label>
+        <input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+      </div>
+
+      <div class="field">
+        <label for="logradouro">Logradouro</label>
+        <input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+      </div>
+
+      <div class="field">
+        <label for="numero">Número</label>
+        <input id="numero" type="text" formControlName="numero" placeholder="Número" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="complemento">Complemento</label>
+        <input
+          id="complemento"
+          type="text"
+          formControlName="complemento"
+          placeholder="Complemento"
+        />
+      </div>
+
+      <div class="field">
+        <label for="bairro">Bairro</label>
+        <input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
+      </div>
+
+      <div class="field">
+        <label for="cidade">Cidade</label>
+        <input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="estado">Estado</label>
+        <input id="estado" type="text" formControlName="estado" placeholder="Estado" />
+      </div>
+
+      <div class="field">
+        <label for="pais">País</label>
+        <input id="pais" type="text" formControlName="pais" placeholder="País" />
+      </div>
+
+      <div class="field">
+        <label for="tipo">Tipo</label>
+        <select id="tipo" formControlName="tipo">
+          <option value="matriz">Matriz</option>
+          <option value="filial">Filial</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- BOTÃO -->
+    <div class="container-btn">
+      <button type="button" [disabled]="formEmpresa.invalid">Salvar</button>
+      <button type="submit" [disabled]="formEmpresa.invalid">Enviar</button>
+    </div>
+  </form>
+</div>

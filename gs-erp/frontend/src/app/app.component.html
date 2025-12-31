@@ -1,0 +1,135 @@
+<div class="topnavbar" [class.shift]="sidebarActive">
+  <button class="btn-hamburguer" (click)="toggleSidebar()">
+    <svg class="icon-menu" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="6" width="18" height="2" rx="1" fill="currentColor" />
+      <rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor" />
+      <rect x="3" y="16" width="18" height="2" rx="1" fill="currentColor" />
+    </svg>
+  </button>
+  <ul class="navlinks">
+    <li><a routerLink="/Sair">Sair</a></li>
+  </ul>
+</div>
+<div class="sidebar" [class.active]="sidebarActive">
+  <h2>Menu</h2>
+  <ul>
+    <!-- item com submenu -->
+    <li class="menu-item" [class.active]="submenuOpen['cadastros']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('cadastros', $event)"> Cadastros </a>
+      <div class="submenu">
+        <a routerLink="/cadastro-empresa" routerLinkActive="submenu-active">Empresa</a>
+        <a routerLink="/cadastro-cliente" routerLinkActive="submenu-active">Clientes</a>
+        <a routerLink="/cadastro-fornecedor" routerLinkActive="submenu-active">Fornecedores</a>
+        <a routerLink="/cadastro-produtos" routerLinkActive="submenu-active">Produtos</a>
+        <a href="#">Serviços</a>
+        <a href="#">Usuarios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['frenteloja']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('frenteloja', $event)">
+        Gestão de Frente de Loja
+      </a>
+      <div class="submenu">
+        <a href="#">Empresa</a>
+        <a href="#">Clientes</a>
+        <a href="#">Fornecedores</a>
+        <a href="#">Produtos</a>
+        <a href="#">Usuarios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['vendas']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('vendas', $event)"> Gestão de Vendas </a>
+      <div class="submenu">
+        <a href="#">Pedidos</a>
+        <a href="#">Faturamento</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['crm']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('crm', $event)"> Gestão de CRM </a>
+      <div class="submenu">
+        <a href="#">Pedidos</a>
+        <a href="#">Faturamento</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['financeiro']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('financeiro', $event)">
+        Gestão financeira
+      </a>
+      <div class="submenu">
+        <a href="#">Contas a Pagar</a>
+        <a href="#">Contas a Receber</a>
+        <a href="#">Fluxo de Caixa</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['compras']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('compras', $event)">
+        Gestão de Compras
+      </a>
+      <div class="submenu">
+        <a href="#">Pedidos de Compra</a>
+        <a href="#">Fornecedores</a>
+        <a href="#">Cotações</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['contabil']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('contabil', $event)">
+        Gestão Contabil
+      </a>
+      <div class="submenu">
+        <a href="#">Balancete</a>
+        <a href="#">DRE</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['estoque']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('estoque', $event)">Gestão de Estoque</a>
+      <div class="submenu">
+        <a href="#">Entrada</a>
+        <a href="#">Saída</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['bi']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('bi', $event)">Business Inteligence</a>
+      <div class="submenu">
+        <a href="#">Dashboards</a>
+        <a href="#">Relatorios</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['opservicos']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('opservicos', $event)"
+        >Operações e Serviços</a
+      >
+      <div class="submenu">
+        <a href="#">Integrações</a>
+        <a href="#">Manutenção</a>
+        <a href="#">Importação de Dados</a>
+        <a href="#">Exportação de Dados</a>
+        <a href="#">Suporte</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['configs']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('configs', $event)">Configurações</a>
+      <div class="submenu">
+        <a href="#">Usuários</a>
+        <a href="#">Permissões</a>
+      </div>
+    </li>
+    <li class="menu-item" [class.active]="submenuOpen['help']">
+      <a href="#" class="main-link" (click)="toggleSubmenu('help', $event)">Ajuda</a>
+      <div class="submenu">
+        <a href="#">Pergunte para IA</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div id="overlay" class="overlay" [class.active]="sidebarActive" (click)="toggleSidebar()"></div>
+
+<div class="content" [class.shift]="sidebarActive">
+  <router-outlet></router-outlet>
+</div>

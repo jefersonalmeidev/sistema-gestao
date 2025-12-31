@@ -1,0 +1,176 @@
+/* =========================
+   MOBILE-FIRST: FIELD
+   ========================= */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.field label {
+  width: 100%;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+  font-size: 14px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 42px;
+  padding: 0 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 120px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* =========================
+   NORMALIZAÇÃO DO SELECT
+   ========================= */
+
+.field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='gray' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+/* =========================
+   FOCO + HOVER
+   ========================= */
+
+.field input:hover,
+.field select:hover {
+  border-color: #6c9cff;
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: none;
+  border-color: #3f7cff;
+  box-shadow: 0 0 0 3px rgba(63, 124, 255, 0.2);
+  background-color: #fcfdff;
+}
+
+/* =========================
+   SEPARADOR DE CATEGORIAS
+   ========================= */
+
+.field-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 16px 0;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.field-separator::before,
+.field-separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dashed #ccc;
+  margin: 0 8px;
+  max-width: 150px;
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.container-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  height: 42px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(63, 124, 255, 0.4);
+  outline-offset: 2px;
+}
+
+/* =========================
+   DESKTOP: LABEL À ESQUERDA
+   ========================= */
+
+@media (min-width: 769px) {
+  .field {
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 50%;
+    min-width: 280px;
+    gap: 12px;
+  }
+
+  .field label {
+    width: 150px;
+    margin: 0;
+    text-align: right;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .field input,
+  .field select {
+    flex: 1;
+    height: 45px;
+    font-size: 15px;
+    padding: 0 12px;
+  }
+
+  .field-separator {
+    font-size: 14px;
+    margin: 24px 0;
+  }
+
+  .field-separator::before,
+  .field-separator::after {
+    margin: 0 12px;
+    max-width: 200px;
+  }
+
+  .container-btn {
+    margin-top: 24px;
+  }
+
+  button {
+    height: 45px;
+    font-size: 15px;
+    width: auto;
+    min-width: 100px;
+  }
+}

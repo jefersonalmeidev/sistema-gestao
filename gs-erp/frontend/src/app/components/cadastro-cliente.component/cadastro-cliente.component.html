@@ -1,0 +1,149 @@
+<div class="title-container">
+  <h1>Cadastro de Cliente</h1>
+</div>
+
+<div class="cad-cliente-container">
+  <form class="form-cad-cliente" [formGroup]="formCliente" (ngSubmit)="onSubmit()" novalidate>
+    <!-- IDENTIFICAÇÃO -->
+    <div class="field-separator">Identificação</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="codigo">Código</label>
+        <input
+          id="codigo"
+          type="text"
+          formControlName="codigo"
+          placeholder="Código"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input
+          id="nome"
+          type="text"
+          formControlName="nome"
+          placeholder="Nome"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="sobrenome">Sobrenome</label>
+        <input
+          id="sobrenome"
+          type="text"
+          formControlName="sobrenome"
+          placeholder="Sobrenome"
+          aria-required="true"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input id="dataNascimento" type="date" formControlName="dataNascimento" />
+      </div>
+      <div class="field">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" formControlName="cpf" placeholder="000.000.000-00" />
+      </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="field-separator">Contatos</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" type="tel" formControlName="telefone" placeholder="Telefone" />
+      </div>
+      <div class="field">
+        <label for="celular">Celular</label>
+        <input id="celular" type="tel" formControlName="celular" placeholder="Celular" />
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email" placeholder="E-mail" />
+      </div>
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="field-separator">Endereço</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="cep">CEP</label>
+        <input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+      </div>
+      <div class="field">
+        <label for="logradouro">Logradouro</label>
+        <input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+      </div>
+      <div class="field">
+        <label for="numero">Número</label>
+        <input id="numero" type="text" formControlName="numero" placeholder="Número" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="complemento">Complemento</label>
+        <input
+          id="complemento"
+          type="text"
+          formControlName="complemento"
+          placeholder="Complemento"
+        />
+      </div>
+      <div class="field">
+        <label for="bairro">Bairro</label>
+        <input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
+      </div>
+      <div class="field">
+        <label for="cidade">Cidade</label>
+        <input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="estado">Estado</label>
+        <input id="estado" type="text" formControlName="estado" placeholder="Estado" />
+      </div>
+      <div class="field">
+        <label for="pais">País</label>
+        <input id="pais" type="text" formControlName="pais" placeholder="País" value="Brasil" />
+      </div>
+    </div>
+
+    <!-- PREFERÊNCIAS -->
+    <div class="field-separator">Preferências</div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="contatoPreferencial">Contato Preferencial</label>
+        <select id="contatoPreferencial" formControlName="contatoPreferencial">
+          <option value="Email">Email</option>
+          <option value="Telefone">Telefone</option>
+          <option value="WhatsApp">WhatsApp</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="observacoes">Observações</label>
+        <input
+          id="observacoes"
+          type="text"
+          formControlName="observacoes"
+          placeholder="Observações"
+        />
+      </div>
+    </div>
+
+    <!-- BOTÃO -->
+    <div class="container-btn">
+      <button type="submit" [disabled]="formCliente.invalid">Salvar</button>
+    </div>
+  </form>
+</div>

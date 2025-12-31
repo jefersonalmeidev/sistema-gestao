@@ -1,0 +1,154 @@
+/* =========================
+   MOBILE-FIRST: FIELD
+   ========================= */
+
+.field {
+  display: flex;
+  flex-direction: column; /* label acima do input por padrão */
+  align-items: flex-start;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.field label {
+  width: 100%;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+  font-size: 14px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 42px;
+  padding: 0 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 120px;
+  transition: all 0.2s ease;
+}
+
+/* =========================
+   NORMALIZAÇÃO DO SELECT
+   ========================= */
+
+.field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='gray' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* =========================
+   FOCO + HOVER
+   ========================= */
+
+.field input:hover,
+.field select:hover {
+  border-color: #6c9cff;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #3f7cff;
+  box-shadow: 0 0 0 3px rgba(63, 124, 255, 0.2);
+  background-color: #fcfdff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   SEPARADOR DE CATEGORIAS
+   ========================= */
+
+.field-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* texto sempre centralizado */
+  width: 100%;
+  margin: 16px 0;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.field-separator::before,
+.field-separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dashed #ccc;
+  margin: 0 8px;
+}
+
+  .container-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+  button {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+/* =========================
+   DESKTOP: LABEL À ESQUERDA
+   ========================= */
+
+@media (min-width: 769px) {
+  .field {
+    flex-direction: row; /* label à esquerda */
+    align-items: center;
+    flex: 1 1 50%;
+    min-width: 250px;
+  }
+
+  .field label {
+    width: 150px;
+    margin-right: 12px;
+    text-align: right;
+    font-size: 15px;
+  }
+
+  .field input,
+  .field select {
+    flex: 1 1 auto;
+    height: 45px;
+    font-size: 15px;
+    padding: 0 12px;
+  }
+
+  .field-separator {
+    font-size: 14px;
+    margin: 24px 0;
+  }
+
+  .field-separator::before,
+  .field-separator::after {
+    margin: 0 12px;
+  }
+
+  .container-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+    button {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+}
