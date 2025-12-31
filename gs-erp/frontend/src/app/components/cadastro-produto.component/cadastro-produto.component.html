@@ -79,12 +79,10 @@
       </div>
       <div class="field">
         <label for="unidadeMedida">Unidade de Medida</label>
-        <input
-          id="unidadeMedida"
-          type="text"
-          formControlName="unidadeMedida"
-          placeholder="Ex: unidade, kg, litro"
-        />
+        <select id="unidadeMedida" formControlName="unidadeMedida">
+          <option value="kg">KG</option>
+          <option value="lt">LT</option>
+        </select>
       </div>
       <div class="field">
         <label for="estoqueMinimo">Estoque Mínimo</label>
