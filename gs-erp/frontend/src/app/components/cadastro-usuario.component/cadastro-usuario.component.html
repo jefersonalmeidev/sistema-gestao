@@ -1,0 +1,137 @@
+<div class="form-container">
+  <!-- Título -->
+  <div class="title-container">
+    <h1>Cadastro de Usuário</h1>
+  </div>
+
+  <!-- Formulário -->
+  <form class="form-cad-usuario" [formGroup]="formUsuario" (ngSubmit)="onSubmit()" novalidate>
+    <!-- IDENTIFICAÇÃO -->
+    <div class="field-separator">Identificação</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="nomeCompleto">Nome Completo</label>
+        <input
+          id="nomeCompleto"
+          type="text"
+          formControlName="nomeCompleto"
+          placeholder="Nome Completo"
+        />
+      </div>
+      <div class="field">
+        <label for="apelido">Apelido</label>
+        <input id="apelido" type="text" formControlName="apelido" placeholder="Apelido" />
+      </div>
+      <div class="field">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input id="dataNascimento" type="date" formControlName="dataNascimento" />
+      </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="field-separator">Contato</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email" placeholder="E-mail" />
+      </div>
+      <div class="field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" type="tel" formControlName="telefone" placeholder="Telefone" />
+      </div>
+    </div>
+
+    <!-- SEGURANÇA -->
+    <div class="field-separator">Segurança</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" formControlName="senha" placeholder="Senha" />
+      </div>
+      <div class="field">
+        <label for="confirmarSenha">Confirmar Senha</label>
+        <input
+          id="confirmarSenha"
+          type="password"
+          formControlName="confirmarSenha"
+          placeholder="Confirmar Senha"
+        />
+      </div>
+    </div>
+
+    <!-- Checkbox MFA -->
+    <div class="form-row checkbox-field">
+      <label for="autenticaDoisFatores">
+        <input id="autenticaDoisFatores" type="checkbox" formControlName="autenticaDoisFatores" />
+        Autenticação 2FA
+      </label>
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="field-separator">Endereço (Opcional)</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="cep">CEP</label
+        ><input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+      </div>
+      <div class="field">
+        <label for="logradouro">Logradouro</label
+        ><input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+      </div>
+      <div class="field">
+        <label for="numero">Número</label
+        ><input id="numero" type="text" formControlName="numero" placeholder="Número" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="complemento">Complemento</label
+        ><input
+          id="complemento"
+          type="text"
+          formControlName="complemento"
+          placeholder="Complemento"
+        />
+      </div>
+      <div class="field">
+        <label for="bairro">Bairro</label
+        ><input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
+      </div>
+      <div class="field">
+        <label for="cidade">Cidade</label
+        ><input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="estado">Estado</label
+        ><input id="estado" type="text" formControlName="estado" placeholder="Estado" />
+      </div>
+      <div class="field">
+        <label for="pais">País</label
+        ><input id="pais" type="text" formControlName="pais" placeholder="País" />
+      </div>
+    </div>
+
+    <!-- CONSENTIMENTOS -->
+    <div class="field-separator">Consentimentos</div>
+    <div class="form-row checkbox-field">
+      <label for="termosUso"
+        ><input id="termosUso" type="checkbox" formControlName="termosUso" />Aceito os Termos de
+        Uso</label
+      >
+    </div>
+    <div class="form-row checkbox-field">
+      <label for="receberPromocoes"
+        ><input id="receberPromocoes" type="checkbox" formControlName="receberPromocoes" />Desejo
+        receber promoções</label
+      >
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="container-btn">
+      <button type="button" [disabled]="formUsuario.invalid">Salvar</button>
+      <button type="submit" [disabled]="formUsuario.invalid">Enviar</button>
+    </div>
+  </form>
+</div>

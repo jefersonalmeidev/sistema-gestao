@@ -1,154 +1,139 @@
 /* =========================
-   MOBILE-FIRST: FIELD
+   CONTAINER PRINCIPAL
    ========================= */
+.cad-usuario-container {
+  width: 95%;               /* ocupa 95% da largura da tela */
+  max-width: 1200px;        /* não ultrapassa 1200px */
+  min-width: 300px;         /* evita ficar muito pequeno em telas pequenas */
+  margin: 20px auto;        /* centralizado vertical e horizontalmente */
+  padding: 24px;            /* mais espaçamento interno */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
 
-.field {
+/* =========================
+   TÍTULO
+   ========================= */
+.title-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* =========================
+   SEPARADOR DE SEÇÕES
+   ========================= */
+.field-separator {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+/* =========================
+   LINHAS DO FORMULÁRIO
+   ========================= */
+.form-row {
   display: flex;
-  flex-direction: column; /* label acima do input por padrão */
-  align-items: flex-start;
-  margin: 8px 0;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   CAMPOS INDIVIDUAIS
+   ========================= */
+.field {
+  flex: 1 1 100%; /* 1 coluna por padrão */
+  display: flex;
+  flex-direction: column;
 }
 
 .field label {
-  width: 100%;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #444;
-  text-align: left;
-  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .field input,
 .field select {
-  width: 100%;
-  height: 42px;
-  padding: 0 10px;
-  font-size: 14px;
-  box-sizing: border-box;
+  padding: 6px 8px;
+  font-size: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  min-width: 120px;
-  transition: all 0.2s ease;
-}
-
-/* =========================
-   NORMALIZAÇÃO DO SELECT
-   ========================= */
-
-.field select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='gray' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px;
-}
-
-/* =========================
-   FOCO + HOVER
-   ========================= */
-
-.field input:hover,
-.field select:hover {
-  border-color: #6c9cff;
-}
-
-.field input:focus,
-.field select:focus {
-  outline: none;
-  border-color: #3f7cff;
-  box-shadow: 0 0 0 3px rgba(63, 124, 255, 0.2);
-  background-color: #fcfdff;
-  transform: translateY(-1px);
-}
-
-/* =========================
-   SEPARADOR DE CATEGORIAS
-   ========================= */
-
-.field-separator {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* texto sempre centralizado */
   width: 100%;
-  margin: 16px 0;
-  color: #666;
-  font-weight: 600;
-  font-size: 13px;
+  box-sizing: border-box;
 }
-
-.field-separator::before,
-.field-separator::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px dashed #ccc;
-  margin: 0 8px;
-}
-
-  .container-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-  }
-  button {
-    width: 100px;
-    height: 30px;
-    margin-top: 10px;
-    font-weight: bold;
-  }
 
 /* =========================
-   DESKTOP: LABEL À ESQUERDA
+   BOTÕES
    ========================= */
+.container-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-@media (min-width: 769px) {
+.container-btn button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.container-btn button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.container-btn button:hover:not(:disabled) {
+  background-color: #135ba1;
+}
+
+/* =========================
+   CHECKBOXES
+   ========================= */
+.checkbox-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkbox-field label {
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.checkbox-field input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  accent-color: #1976d2;
+}
+
+/* =========================
+   RESPONSIVE: 2 COLUNAS (tablet)
+   ========================= */
+@media (min-width: 600px) {
   .field {
-    flex-direction: row; /* label à esquerda */
-    align-items: center;
-    flex: 1 1 50%;
-    min-width: 250px;
+    flex: 1 1 calc(50% - 16px); /* 2 colunas com gap */
   }
+}
 
-  .field label {
-    width: 150px;
-    margin-right: 12px;
-    text-align: right;
-    font-size: 15px;
+/* =========================
+   RESPONSIVE: 3 COLUNAS (desktop)
+   ========================= */
+@media (min-width: 992px) {
+  .field {
+    flex: 1 1 calc(33.33% - 16px); /* 3 colunas com gap */
   }
-
-  .field input,
-  .field select {
-    flex: 1 1 auto;
-    height: 45px;
-    font-size: 15px;
-    padding: 0 12px;
-  }
-
-  .field-separator {
-    font-size: 14px;
-    margin: 24px 0;
-  }
-
-  .field-separator::before,
-  .field-separator::after {
-    margin: 0 12px;
-  }
-
-  .container-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-    button {
-    width: 100px;
-    height: 30px;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
 }

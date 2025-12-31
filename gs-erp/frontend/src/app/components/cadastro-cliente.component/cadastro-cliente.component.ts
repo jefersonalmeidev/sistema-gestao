@@ -24,7 +24,8 @@ export class FormularioClienteComponent {
     contato: {
       telefone: '',
       celular: '',
-      email: ''
+      email: '',
+      receberPromocoes:''
     },
     endereco: {
       cep: '',
@@ -37,6 +38,7 @@ export class FormularioClienteComponent {
       pais: 'Brasil'
     },
     preferencias: {
+      aceitoTermos:'',
       contatoPreferencial: 'Email' as 'Email' | 'Telefone' | 'WhatsApp',
       observacoes: ''
     }
@@ -55,6 +57,7 @@ export class FormularioClienteComponent {
       telefone: [''],
       celular: [''],
       email: ['', [Validators.required, Validators.email]],
+      receberPromocoes:[''],
 
       // Endereço
       cep: ['', Validators.required],
@@ -68,6 +71,7 @@ export class FormularioClienteComponent {
 
       // Preferências
       contatoPreferencial: ['Email', Validators.required],
+      aceitoTermos:[''],
       observacoes: ['']
     });
   }

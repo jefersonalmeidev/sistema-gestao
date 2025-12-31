@@ -1,20 +1,21 @@
-<div class="title-container">
-  <h1>Cadastro de Empresa</h1>
-</div>
+<div class="form-container">
+  <!-- Título -->
+  <div class="title-container">
+    <h1>Cadastro de Empresa</h1>
+  </div>
 
-<div class="cad-emp-container">
+  <!-- Formulário -->
   <form class="form-cad-emp" [formGroup]="formEmpresa" (ngSubmit)="onSubmit()" novalidate>
     <!-- IDENTIFICAÇÃO -->
     <div class="field-separator">Identificação</div>
-
     <div class="form-row">
       <div class="field">
-        <label for="codigo">Codigo Empresa</label>
+        <label for="codigo">Código Empresa</label>
         <input
           id="codigo"
           type="text"
           formControlName="codigo"
-          placeholder="Codigo"
+          placeholder="Código"
           aria-required="true"
         />
       </div>
@@ -28,7 +29,6 @@
           aria-required="true"
         />
       </div>
-
       <div class="field">
         <label for="cnpj">CNPJ</label>
         <input
@@ -51,7 +51,6 @@
           placeholder="E-mail Principal"
         />
       </div>
-
       <div class="field">
         <label for="inscricaoEstadual">Inscrição Estadual</label>
         <input
@@ -73,7 +72,6 @@
           placeholder="Inscrição Municipal"
         />
       </div>
-
       <div class="field">
         <label for="tipoEmpresa">Tipo de Empresa</label>
         <select id="tipoEmpresa" formControlName="tipoEmpresa">
@@ -92,7 +90,6 @@
         <label for="dataAbertura">Data de Abertura</label>
         <input id="dataAbertura" type="date" formControlName="dataAbertura" />
       </div>
-
       <div class="field">
         <label for="situacaoCadastral">Situação Cadastral</label>
         <select id="situacaoCadastral" formControlName="situacaoCadastral">
@@ -105,13 +102,11 @@
 
     <!-- CONTATOS -->
     <div class="field-separator">Contatos</div>
-
     <div class="form-row">
       <div class="field">
         <label for="telefone">Telefone</label>
         <input id="telefone" type="tel" formControlName="telefone" placeholder="Telefone" />
       </div>
-
       <div class="field">
         <label for="celular">Celular</label>
         <input id="celular" type="tel" formControlName="celular" placeholder="Celular" />
@@ -128,7 +123,6 @@
           placeholder="Email de Contato"
         />
       </div>
-
       <div class="field">
         <label for="emailFinanceiro">Email Financeiro</label>
         <input
@@ -138,14 +132,13 @@
           placeholder="Email Financeiro"
         />
       </div>
-    </div>
-
-    <div class="form-row">
       <div class="field">
         <label for="site">Website</label>
         <input id="site" type="url" formControlName="site" placeholder="https://www.exemplo.com" />
       </div>
+    </div>
 
+    <div class="form-row">
       <div class="field">
         <label for="responsavel">Responsável</label>
         <input
@@ -159,7 +152,6 @@
 
     <!-- FISCAL -->
     <div class="field-separator">Fiscal</div>
-
     <div class="form-row">
       <div class="field">
         <label for="regimeTributario">Regime Tributário</label>
@@ -170,7 +162,6 @@
           <option value="Lucro Real">Lucro Real</option>
         </select>
       </div>
-
       <div class="field">
         <label for="optanteSimplesNacional">Optante Simples Nacional</label>
         <select id="optanteSimplesNacional" formControlName="optanteSimplesNacional">
@@ -178,9 +169,6 @@
           <option value="s">Sim</option>
         </select>
       </div>
-    </div>
-
-    <div class="form-row">
       <div class="field">
         <label for="cnaePrincipal">CNAE Principal</label>
         <input
@@ -190,7 +178,9 @@
           placeholder="CNAE Principal"
         />
       </div>
+    </div>
 
+    <div class="form-row">
       <div class="field">
         <label for="cnaesSecundarios">CNAEs Secundários</label>
         <input
@@ -200,7 +190,6 @@
           placeholder="CNAEs Secundários"
         />
       </div>
-
       <div class="field">
         <label for="codigoRegimeTributario">Código Regime Tributário</label>
         <input
@@ -210,9 +199,6 @@
           placeholder="Código Regime Tributário"
         />
       </div>
-    </div>
-
-    <div class="form-row">
       <div class="field">
         <label for="contribuinteICMS">Contribuinte ICMS</label>
         <select id="contribuinteICMS" formControlName="contribuinteICMS">
@@ -220,7 +206,9 @@
           <option value="s">Sim</option>
         </select>
       </div>
+    </div>
 
+    <div class="form-row">
       <div class="field">
         <label for="aliquotas">Alíquotas</label>
         <select id="aliquotas" formControlName="aliquotas">
@@ -230,7 +218,6 @@
           <option value="cofins">COFINS</option>
         </select>
       </div>
-
       <div class="field">
         <label for="municipioIncidenciaISS">Município Incidência ISS</label>
         <input
@@ -244,90 +231,81 @@
 
     <!-- FINANCEIRO -->
     <div class="field-separator">Financeiro</div>
-
     <div class="form-row">
       <div class="field">
-        <label for="banco">Banco</label>
-        <input id="banco" type="text" formControlName="banco" placeholder="Banco" />
+        <label for="banco">Banco</label
+        ><input id="banco" type="text" formControlName="banco" placeholder="Banco" />
       </div>
       <div class="field">
-        <label for="agencia">Agencia</label>
-        <input id="agencia" type="text" formControlName="agencia" placeholder="Agencia" />
+        <label for="agencia">Agência</label
+        ><input id="agencia" type="text" formControlName="agencia" placeholder="Agência" />
       </div>
       <div class="field">
-        <label for="conta">Conta</label>
-        <input id="conta" type="text" formControlName="conta" placeholder="Conta" />
+        <label for="conta">Conta</label
+        ><input id="conta" type="text" formControlName="conta" placeholder="Conta" />
       </div>
-
+    </div>
+    <div class="form-row">
       <div class="field">
         <label for="tipoConta">Tipo Conta</label>
-        <select id="titipoContapo" formControlName="tipoConta">
+        <select id="tipoConta" formControlName="tipoConta">
           <option value="corrente">Corrente</option>
         </select>
       </div>
       <div class="field">
-        <label for="chavePix">Chave Pix</label>
-        <input id="chavePix" type="text" formControlName="chavePix" placeholder="Chave Pix" />
+        <label for="chavePix">Chave Pix</label
+        ><input id="chavePix" type="text" formControlName="chavePix" placeholder="Chave Pix" />
       </div>
       <div class="field">
-        <label for="titular">Titular</label>
-        <input id="titular" type="text" formControlName="titular" placeholder="Titular" />
+        <label for="titular">Titular</label
+        ><input id="titular" type="text" formControlName="titular" placeholder="Titular" />
       </div>
     </div>
 
     <!-- ENDEREÇO -->
     <div class="field-separator">Endereço</div>
-
     <div class="form-row">
       <div class="field">
-        <label for="cep">CEP</label>
-        <input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+        <label for="cep">CEP</label
+        ><input id="cep" type="text" formControlName="cep" placeholder="CEP" />
       </div>
-
       <div class="field">
-        <label for="logradouro">Logradouro</label>
-        <input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+        <label for="logradouro">Logradouro</label
+        ><input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
       </div>
-
       <div class="field">
-        <label for="numero">Número</label>
-        <input id="numero" type="text" formControlName="numero" placeholder="Número" />
+        <label for="numero">Número</label
+        ><input id="numero" type="text" formControlName="numero" placeholder="Número" />
       </div>
     </div>
-
     <div class="form-row">
       <div class="field">
-        <label for="complemento">Complemento</label>
-        <input
+        <label for="complemento">Complemento</label
+        ><input
           id="complemento"
           type="text"
           formControlName="complemento"
           placeholder="Complemento"
         />
       </div>
-
       <div class="field">
-        <label for="bairro">Bairro</label>
-        <input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
+        <label for="bairro">Bairro</label
+        ><input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
       </div>
-
       <div class="field">
-        <label for="cidade">Cidade</label>
-        <input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+        <label for="cidade">Cidade</label
+        ><input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
       </div>
     </div>
-
     <div class="form-row">
       <div class="field">
-        <label for="estado">Estado</label>
-        <input id="estado" type="text" formControlName="estado" placeholder="Estado" />
+        <label for="estado">Estado</label
+        ><input id="estado" type="text" formControlName="estado" placeholder="Estado" />
       </div>
-
       <div class="field">
-        <label for="pais">País</label>
-        <input id="pais" type="text" formControlName="pais" placeholder="País" />
+        <label for="pais">País</label
+        ><input id="pais" type="text" formControlName="pais" placeholder="País" />
       </div>
-
       <div class="field">
         <label for="tipo">Tipo</label>
         <select id="tipo" formControlName="tipo">
@@ -337,7 +315,7 @@
       </div>
     </div>
 
-    <!-- BOTÃO -->
+    <!-- BOTÕES -->
     <div class="container-btn">
       <button type="button" [disabled]="formEmpresa.invalid">Salvar</button>
       <button type="submit" [disabled]="formEmpresa.invalid">Enviar</button>

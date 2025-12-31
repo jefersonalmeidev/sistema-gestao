@@ -31,6 +31,7 @@ export class FormularioComponent {
       celular: '',
       emailPrincipal: '',
       emailFinanceiro: '',
+      emailContato:'',
       site: '',
       responsavel: ''
     },
@@ -89,6 +90,7 @@ export class FormularioComponent {
       celular: [''],
       emailPrincipal: ['', [Validators.required, Validators.email]],
       emailFinanceiro: [''],
+      emailContato:[''],
       site: [''],
       responsavel: [''],
 

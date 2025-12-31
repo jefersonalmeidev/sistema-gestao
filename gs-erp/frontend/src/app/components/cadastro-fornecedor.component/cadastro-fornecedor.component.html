@@ -1,12 +1,13 @@
-<div class="title-container">
-  <h1>Cadastro de Fornecedor</h1>
-</div>
+<div class="form-container">
+  <!-- Título -->
+  <div class="title-container">
+    <h1>Cadastro de Fornecedor</h1>
+  </div>
 
-<div class="cad-emp-container">
-  <form class="form-cad-emp" [formGroup]="formFornecedor" (ngSubmit)="onSubmit()" novalidate>
+  <!-- Formulário -->
+  <form class="form-cad-fornecedor" [formGroup]="formFornecedor" (ngSubmit)="onSubmit()" novalidate>
     <!-- IDENTIFICAÇÃO -->
     <div class="field-separator">Identificação</div>
-
     <div formGroupName="identificacao" class="form-row">
       <div class="field">
         <label for="codigo">Código Fornecedor</label>
@@ -49,9 +50,8 @@
       </div>
     </div>
 
-    <!-- CONTATO -->
+    <!-- CONTATOS -->
     <div class="field-separator">Contatos</div>
-
     <div formGroupName="contato" class="form-row">
       <div class="field">
         <label for="emailPrincipal">Email Principal</label>
@@ -70,50 +70,52 @@
 
     <!-- ENDEREÇO -->
     <div class="field-separator">Endereço</div>
-
     <div formGroupName="endereco" class="form-row">
       <div class="field">
-        <label for="cep">CEP</label>
-        <input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+        <label for="cep">CEP</label
+        ><input id="cep" type="text" formControlName="cep" placeholder="CEP" />
       </div>
       <div class="field">
-        <label for="logradouro">Logradouro</label>
-        <input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+        <label for="logradouro">Logradouro</label
+        ><input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
       </div>
       <div class="field">
-        <label for="numero">Número</label>
-        <input id="numero" type="text" formControlName="numero" placeholder="Número" />
+        <label for="numero">Número</label
+        ><input id="numero" type="text" formControlName="numero" placeholder="Número" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="cidade">Cidade</label
+        ><input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
       </div>
       <div class="field">
-        <label for="cidade">Cidade</label>
-        <input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+        <label for="estado">Estado</label
+        ><input id="estado" type="text" formControlName="estado" placeholder="Estado" />
       </div>
       <div class="field">
-        <label for="estado">Estado</label>
-        <input id="estado" type="text" formControlName="estado" placeholder="Estado" />
-      </div>
-      <div class="field">
-        <label for="pais">País</label>
-        <input id="pais" type="text" formControlName="pais" placeholder="País" />
+        <label for="pais">País</label
+        ><input id="pais" type="text" formControlName="pais" placeholder="País" />
       </div>
     </div>
 
     <!-- BANCÁRIO -->
     <div class="field-separator">Pagamento</div>
-
     <div formGroupName="bancario" class="form-row">
       <div class="field">
-        <label for="banco">Banco</label>
-        <input id="banco" type="text" formControlName="banco" placeholder="Banco" />
+        <label for="banco">Banco</label
+        ><input id="banco" type="text" formControlName="banco" placeholder="Banco" />
       </div>
       <div class="field">
-        <label for="agencia">Agência</label>
-        <input id="agencia" type="text" formControlName="agencia" placeholder="Agência" />
+        <label for="agencia">Agência</label
+        ><input id="agencia" type="text" formControlName="agencia" placeholder="Agência" />
       </div>
       <div class="field">
-        <label for="conta">Conta</label>
-        <input id="conta" type="text" formControlName="conta" placeholder="Conta" />
+        <label for="conta">Conta</label
+        ><input id="conta" type="text" formControlName="conta" placeholder="Conta" />
       </div>
+    </div>
+    <div class="form-row">
       <div class="field">
         <label for="tipoConta">Tipo de Conta</label>
         <select id="tipoConta" formControlName="tipoConta">
@@ -124,7 +126,7 @@
       </div>
     </div>
 
-    <!-- BOTÃO -->
+    <!-- BOTÕES -->
     <div class="container-btn">
       <button type="submit" [disabled]="formFornecedor.invalid">Enviar</button>
     </div>

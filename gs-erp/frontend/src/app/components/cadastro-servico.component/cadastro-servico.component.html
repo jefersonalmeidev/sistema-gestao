@@ -1,0 +1,167 @@
+<div class="form-container">
+  <!-- Título -->
+  <div class="title-container">
+    <h1>Cadastro de Serviço</h1>
+  </div>
+
+  <!-- Formulário -->
+  <form class="form-cad-serv" [formGroup]="formServico" (ngSubmit)="onSubmit()" novalidate>
+    <!-- IDENTIFICAÇÃO DO SERVIÇO -->
+    <div class="field-separator">Identificação do Serviço</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="codigo">Código Serviço</label>
+        <input
+          id="codigo"
+          type="text"
+          formControlName="codigo"
+          placeholder="Código"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="nome">Nome do Serviço</label>
+        <input
+          id="nome"
+          type="text"
+          formControlName="nome"
+          placeholder="Nome do Serviço"
+          aria-required="true"
+        />
+      </div>
+      <div class="field">
+        <label for="categoria">Categoria</label>
+        <input
+          id="categoria"
+          type="text"
+          formControlName="categoria"
+          placeholder="Categoria"
+          aria-required="true"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="descricao">Descrição</label>
+        <input
+          id="descricao"
+          type="text"
+          formControlName="descricao"
+          placeholder="Descrição do Serviço"
+        />
+      </div>
+      <div class="field">
+        <label for="duracao">Duração</label>
+        <input id="duracao" type="text" formControlName="duracao" placeholder="Ex.: 1h 30min" />
+      </div>
+      <div class="field">
+        <label for="disponibilidade">Disponibilidade</label>
+        <input
+          id="disponibilidade"
+          type="text"
+          formControlName="disponibilidade"
+          placeholder="Seg a Sex, 9h-18h"
+        />
+      </div>
+    </div>
+
+    <!-- DADOS DO PRESTADOR -->
+    <div class="field-separator">Dados do Prestador</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="nomePrestador">Nome do Prestador</label>
+        <input
+          id="nomePrestador"
+          type="text"
+          formControlName="nomePrestador"
+          placeholder="Nome do Prestador"
+        />
+      </div>
+      <div class="field">
+        <label for="telefonePrestador">Telefone</label>
+        <input
+          id="telefonePrestador"
+          type="tel"
+          formControlName="telefonePrestador"
+          placeholder="Telefone"
+        />
+      </div>
+      <div class="field">
+        <label for="emailPrestador">Email</label>
+        <input
+          id="emailPrestador"
+          type="email"
+          formControlName="emailPrestador"
+          placeholder="Email"
+        />
+      </div>
+    </div>
+
+    <!-- ENDEREÇO DO PRESTADOR -->
+    <div class="field-separator">Endereço do Prestador</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="cep">CEP</label
+        ><input id="cep" type="text" formControlName="cep" placeholder="CEP" />
+      </div>
+      <div class="field">
+        <label for="logradouro">Logradouro</label
+        ><input id="logradouro" type="text" formControlName="logradouro" placeholder="Logradouro" />
+      </div>
+      <div class="field">
+        <label for="numero">Número</label
+        ><input id="numero" type="text" formControlName="numero" placeholder="Número" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="complemento">Complemento</label
+        ><input
+          id="complemento"
+          type="text"
+          formControlName="complemento"
+          placeholder="Complemento"
+        />
+      </div>
+      <div class="field">
+        <label for="bairro">Bairro</label
+        ><input id="bairro" type="text" formControlName="bairro" placeholder="Bairro" />
+      </div>
+      <div class="field">
+        <label for="cidade">Cidade</label
+        ><input id="cidade" type="text" formControlName="cidade" placeholder="Cidade" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="estado">Estado</label
+        ><input id="estado" type="text" formControlName="estado" placeholder="Estado" />
+      </div>
+      <div class="field">
+        <label for="pais">País</label
+        ><input id="pais" type="text" formControlName="pais" placeholder="País" />
+      </div>
+    </div>
+
+    <!-- OBSERVAÇÕES -->
+    <div class="field-separator">Observações</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="observacoes">Observações</label
+        ><input
+          id="observacoes"
+          type="text"
+          formControlName="observacoes"
+          placeholder="Observações"
+        />
+      </div>
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="container-btn">
+      <button type="button" [disabled]="formServico.invalid">Salvar</button>
+      <button type="submit" [disabled]="formServico.invalid">Enviar</button>
+    </div>
+  </form>
+</div>

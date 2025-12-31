@@ -1,42 +1,25 @@
-<div class="title-container">
-  <h1>Cadastro de Cliente</h1>
-</div>
+<div class="form-container">
+  <!-- Título -->
+  <div class="title-container">
+    <h1>Cadastro de Cliente</h1>
+  </div>
 
-<div class="cad-cliente-container">
+  <!-- Formulário -->
   <form class="form-cad-cliente" [formGroup]="formCliente" (ngSubmit)="onSubmit()" novalidate>
     <!-- IDENTIFICAÇÃO -->
     <div class="field-separator">Identificação</div>
-
     <div class="form-row">
       <div class="field">
         <label for="codigo">Código</label>
-        <input
-          id="codigo"
-          type="text"
-          formControlName="codigo"
-          placeholder="Código"
-          aria-required="true"
-        />
+        <input id="codigo" type="text" formControlName="codigo" placeholder="Código" />
       </div>
       <div class="field">
         <label for="nome">Nome</label>
-        <input
-          id="nome"
-          type="text"
-          formControlName="nome"
-          placeholder="Nome"
-          aria-required="true"
-        />
+        <input id="nome" type="text" formControlName="nome" placeholder="Nome" />
       </div>
       <div class="field">
         <label for="sobrenome">Sobrenome</label>
-        <input
-          id="sobrenome"
-          type="text"
-          formControlName="sobrenome"
-          placeholder="Sobrenome"
-          aria-required="true"
-        />
+        <input id="sobrenome" type="text" formControlName="sobrenome" placeholder="Sobrenome" />
       </div>
     </div>
 
@@ -52,8 +35,7 @@
     </div>
 
     <!-- CONTATO -->
-    <div class="field-separator">Contatos</div>
-
+    <div class="field-separator">Contato</div>
     <div class="form-row">
       <div class="field">
         <label for="telefone">Telefone</label>
@@ -71,7 +53,6 @@
 
     <!-- ENDEREÇO -->
     <div class="field-separator">Endereço</div>
-
     <div class="form-row">
       <div class="field">
         <label for="cep">CEP</label>
@@ -120,7 +101,6 @@
 
     <!-- PREFERÊNCIAS -->
     <div class="field-separator">Preferências</div>
-
     <div class="form-row">
       <div class="field">
         <label for="contatoPreferencial">Contato Preferencial</label>
@@ -141,7 +121,22 @@
       </div>
     </div>
 
-    <!-- BOTÃO -->
+    <!-- CONSENTIMENTOS -->
+    <div class="field-separator">Consentimentos</div>
+    <div class="form-row checkbox-field">
+      <label for="receberPromocoes">
+        <input id="receberPromocoes" type="checkbox" formControlName="receberPromocoes" />
+        Desejo receber promoções
+      </label>
+    </div>
+    <div class="form-row checkbox-field">
+      <label for="aceitoTermos">
+        <input id="aceitoTermos" type="checkbox" formControlName="aceitoTermos" />
+        Aceito os Termos de Uso
+      </label>
+    </div>
+
+    <!-- BOTÕES -->
     <div class="container-btn">
       <button type="submit" [disabled]="formCliente.invalid">Salvar</button>
     </div>
