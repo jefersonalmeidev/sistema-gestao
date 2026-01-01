@@ -10,7 +10,7 @@
     <div class="field-separator">Identificação</div>
     <div class="form-row">
       <div class="field">
-        <label for="codigo">Código</label>
+        <label for="codigo">Código Produto</label>
         <input
           id="codigo"
           type="text"
@@ -221,6 +221,7 @@
     <!-- BOTÃO -->
     <div class="container-btn">
       <button type="submit" [disabled]="formProduto.invalid">Salvar</button>
+      <button type="submit" [disabled]="formProduto.invalid">Enviar</button>
     </div>
   </form>
 </div>

@@ -6,6 +6,7 @@ import { FormularioProdutoComponent } from './components/cadastro-produto.compon
 import { LoginComponent } from './auth/login.component/login.component';
 import { FormularioServicoComponent } from './components/cadastro-servico.component/cadastro-servico.component';
 import { FormularioUsuarioComponent } from './components/cadastro-usuario.component/cadastro-usuario.component';
+import { DadosPontoDeVendaComponent } from './components/dados-ponto-de-venda.component/dados-ponto-de-venda.component';
 
 export const routes: Routes = [
     { path:'app-login', component: LoginComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path:'cadastro-fornecedor', component: FormularioFornecedorComponent },
     { path:'cadastro-produtos', component: FormularioProdutoComponent },
     { path:'cadastro-servico', component: FormularioServicoComponent },
-    { path:'cadastro-usuario', component: FormularioUsuarioComponent }
+    { path:'cadastro-usuario', component: FormularioUsuarioComponent },
+    { path:'dados-pdv', component: DadosPontoDeVendaComponent }
 ];

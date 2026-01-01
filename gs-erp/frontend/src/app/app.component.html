@@ -36,11 +36,11 @@
           >Gestão de Frente de Loja</a
         >
         <div class="submenu">
-          <a href="#">Empresa</a>
-          <a href="#">Clientes</a>
-          <a href="#">Fornecedores</a>
-          <a href="#">Produtos</a>
-          <a href="#">Usuarios</a>
+          <a routerLink="/dados-pdv" routerLinkActive="submenu-active">Ponto de Venda - PDV</a>
+          <a href="#">Chama Fila</a>
+          <a href="#">Busca Preço</a>
+          <a href="#">Balanças</a>
+          <a href="#">Relatorios</a>
         </div>
       </li>
 
@@ -58,9 +58,11 @@
       <li class="menu-item" [class.active]="submenuOpen['crm']">
         <a href="#" class="main-link" (click)="toggleSubmenu('crm', $event)">Gestão de CRM</a>
         <div class="submenu">
-          <a href="#">Pedidos</a>
-          <a href="#">Faturamento</a>
-          <a href="#">Relatorios</a>
+          <a href="#">Contatos e Clientes</a>
+          <a href="#">Oportunidades Vendas</a>
+          <a href="#">Marketing</a>
+          <a href="#">Atendimento ao Cliente</a>
+          <a href="#">Relatórios</a>
         </div>
       </li>
 

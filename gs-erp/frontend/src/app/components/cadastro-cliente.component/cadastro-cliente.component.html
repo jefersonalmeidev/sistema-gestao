@@ -10,7 +10,7 @@
     <div class="field-separator">Identificação</div>
     <div class="form-row">
       <div class="field">
-        <label for="codigo">Código</label>
+        <label for="codigo">Código Cliente</label>
         <input id="codigo" type="text" formControlName="codigo" placeholder="Código" />
       </div>
       <div class="field">
@@ -139,6 +139,7 @@
     <!-- BOTÕES -->
     <div class="container-btn">
       <button type="submit" [disabled]="formCliente.invalid">Salvar</button>
+      <button type="submit" [disabled]="formCliente.invalid">Enviar</button>
     </div>
   </form>
 </div>

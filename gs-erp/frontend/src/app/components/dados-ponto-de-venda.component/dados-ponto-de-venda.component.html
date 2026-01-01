@@ -1,0 +1,42 @@
+<!-- Container da navbar secundária -->
+<div class="secondary-navbar-container">
+  <!-- Título centralizado -->
+  <h2 class="secondary-navbar-title">Ponto de Venda</h2>
+
+  <!-- Navbar secundária -->
+  <nav class="secondary-navbar" [class.shift]="sidebarActive">
+    <ul class="secondary-links">
+      <li
+        *ngFor="let item of secondaryMenu; let i = index"
+        class="nav-item"
+        [class.open]="openDropdown === i"
+        (click)="$event.stopPropagation()"
+      >
+        <!-- Item SEM dropdown -->
+        <a
+          *ngIf="!item.children"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          (click)="closeDropdown()"
+        >
+          {{ item.label }}
+        </a>
+
+        <!-- Item COM dropdown -->
+        <button *ngIf="item.children" class="dropdown-toggle" (click)="toggleDropdown(i)">
+          {{ item.label }}
+          <span class="arrow">▼</span>
+        </button>
+
+        <!-- Dropdown -->
+        <ul *ngIf="item.children && openDropdown === i" class="dropdown-menu">
+          <li *ngFor="let child of item.children">
+            <a [routerLink]="child.route" routerLinkActive="active" (click)="closeDropdown()">
+              {{ child.label }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
